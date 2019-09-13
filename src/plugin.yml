@@ -1,0 +1,29 @@
+name: BladdersAndBowels
+version: 1.0.0
+api-version: 1.14
+description: Adds peeing and shitting
+author: CsokiCraft
+main: csokicraft.bukkit.bladders_bowels.MainPlugin
+commands:
+  shit:
+    description: Take a shit
+    permission: csokicraft.bladders_bowels.shit
+    usage: <command>
+  pee:
+    description: Take a wazz
+    aliases: piss
+    permission: csokicraft.bladders_bowels.shit
+    usage: <command>
+permissions:
+  csokicraft.bladders_bowels.*:
+    children:
+      csokicraft.bladders_bowels.shit: true
+      csokicraft.bladders_bowels.exempt: true
+  csokicraft.bladders_bowels.exempt:
+    description: Prevents bladder and bowel problems
+  csokicraft.bladders_bowels.shit:
+    description: Allows using the /shit and /pee commands
+    default: true
+  csokicraft.bladders_bowels.toilet:
+    description: Allows placing toilets
+    default: true

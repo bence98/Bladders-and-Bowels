@@ -1,0 +1,209 @@
+
+frequency: 0.5
+limits:
+  shit: 10
+  pee: 10
+  thirst: 1200
+  warn: 0.8
+foods:
+- ==: csokicraft.bukkit.bladders_bowels.FoodAttr
+  pee: 0
+  item:
+    ==: org.bukkit.inventory.ItemStack
+    v: 1976
+    type: COOKED_PORKCHOP
+  thirst: 0
+  shit: 1
+- ==: csokicraft.bukkit.bladders_bowels.FoodAttr
+  pee: 0
+  item:
+    ==: org.bukkit.inventory.ItemStack
+    v: 1976
+    type: COOKED_BEEF
+  thirst: 0
+  shit: 1
+- ==: csokicraft.bukkit.bladders_bowels.FoodAttr
+  pee: 0
+  item:
+    ==: org.bukkit.inventory.ItemStack
+    v: 1976
+    type: COOKED_CHICKEN
+  thirst: 0
+  shit: 1
+- ==: csokicraft.bukkit.bladders_bowels.FoodAttr
+  pee: 0
+  item:
+    ==: org.bukkit.inventory.ItemStack
+    v: 1976
+    type: COOKED_MUTTON
+  thirst: 0
+  shit: 1
+- ==: csokicraft.bukkit.bladders_bowels.FoodAttr
+  pee: 0
+  item:
+    ==: org.bukkit.inventory.ItemStack
+    v: 1976
+    type: COOKED_COD
+  thirst: 0
+  shit: 1
+- ==: csokicraft.bukkit.bladders_bowels.FoodAttr
+  pee: 0
+  item:
+    ==: org.bukkit.inventory.ItemStack
+    v: 1976
+    type: COOKED_SALMON
+  thirst: 0
+  shit: 1
+- ==: csokicraft.bukkit.bladders_bowels.FoodAttr
+  pee: 0
+  item:
+    ==: org.bukkit.inventory.ItemStack
+    v: 1976
+    type: COOKED_RABBIT
+  thirst: 0
+  shit: 1
+- ==: csokicraft.bukkit.bladders_bowels.FoodAttr
+  pee: 0
+  item:
+    ==: org.bukkit.inventory.ItemStack
+    v: 1976
+    type: BAKED_POTATO
+  thirst: 0
+  shit: 1
+- ==: csokicraft.bukkit.bladders_bowels.FoodAttr
+  pee: 0
+  item:
+    ==: org.bukkit.inventory.ItemStack
+    v: 1976
+    type: PORKCHOP
+  thirst: 0
+  shit: 1
+- ==: csokicraft.bukkit.bladders_bowels.FoodAttr
+  pee: 0
+  item:
+    ==: org.bukkit.inventory.ItemStack
+    v: 1976
+    type: BEEF
+  thirst: 0
+  shit: 1
+- ==: csokicraft.bukkit.bladders_bowels.FoodAttr
+  pee: 0
+  item:
+    ==: org.bukkit.inventory.ItemStack
+    v: 1976
+    type: CHICKEN
+  thirst: 0
+  shit: 1
+- ==: csokicraft.bukkit.bladders_bowels.FoodAttr
+  pee: 0
+  item:
+    ==: org.bukkit.inventory.ItemStack
+    v: 1976
+    type: MUTTON
+  thirst: 0
+  shit: 1
+- ==: csokicraft.bukkit.bladders_bowels.FoodAttr
+  pee: 0
+  item:
+    ==: org.bukkit.inventory.ItemStack
+    v: 1976
+    type: COD
+  thirst: 0
+  shit: 1
+- ==: csokicraft.bukkit.bladders_bowels.FoodAttr
+  pee: 0
+  item:
+    ==: org.bukkit.inventory.ItemStack
+    v: 1976
+    type: SALMON
+  thirst: 0
+  shit: 1
+- ==: csokicraft.bukkit.bladders_bowels.FoodAttr
+  pee: 0
+  item:
+    ==: org.bukkit.inventory.ItemStack
+    v: 1976
+    type: RABBIT
+  thirst: 0
+  shit: 1
+- ==: csokicraft.bukkit.bladders_bowels.FoodAttr
+  pee: 0
+  item:
+    ==: org.bukkit.inventory.ItemStack
+    v: 1976
+    type: POTATO
+  thirst: 0
+  shit: 1
+- ==: csokicraft.bukkit.bladders_bowels.FoodAttr
+  pee: 0
+  item:
+    ==: org.bukkit.inventory.ItemStack
+    v: 1976
+    type: CARROT
+  thirst: 0
+  shit: 1
+- ==: csokicraft.bukkit.bladders_bowels.FoodAttr
+  pee: 0
+  item:
+    ==: org.bukkit.inventory.ItemStack
+    v: 1976
+    type: BEETROOT
+  thirst: 0
+  shit: 1
+- ==: csokicraft.bukkit.bladders_bowels.FoodAttr
+  pee: 0
+  item:
+    ==: org.bukkit.inventory.ItemStack
+    v: 1976
+    type: BEETROOT_SOUP
+  thirst: 0
+  shit: 1
+- ==: csokicraft.bukkit.bladders_bowels.FoodAttr
+  pee: 0
+  item:
+    ==: org.bukkit.inventory.ItemStack
+    v: 1976
+    type: RABBIT_STEW
+  thirst: 0
+  shit: 1
+- ==: csokicraft.bukkit.bladders_bowels.FoodAttr
+  pee: 0
+  item:
+    ==: org.bukkit.inventory.ItemStack
+    v: 1976
+    type: COOKIE
+  thirst: 0
+  shit: 1
+- ==: csokicraft.bukkit.bladders_bowels.FoodAttr
+  pee: 0
+  item:
+    ==: org.bukkit.inventory.ItemStack
+    v: 1976
+    type: BREAD
+  thirst: 0
+  shit: 1
+- ==: csokicraft.bukkit.bladders_bowels.FoodAttr
+  pee: 0
+  item:
+    ==: org.bukkit.inventory.ItemStack
+    v: 1976
+    type: APPLE
+  thirst: 0
+  shit: 1
+- ==: csokicraft.bukkit.bladders_bowels.FoodAttr
+  pee: 1
+  item:
+    ==: org.bukkit.inventory.ItemStack
+    v: 1976
+    type: POTION
+  thirst: -100
+  shit: 0
+- ==: csokicraft.bukkit.bladders_bowels.FoodAttr
+  pee: 1
+  item:
+    ==: org.bukkit.inventory.ItemStack
+    v: 1976
+    type: MILK_BUCKET
+  thirst: -100
+  shit: 1
+
