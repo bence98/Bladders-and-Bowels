@@ -38,8 +38,11 @@ public class MainPlugin extends JavaPlugin implements Listener{
 	@Override
 	public void onDisable(){
 		super.onDisable();
+		if(taskItemTick>0)
+			getServer().getScheduler().cancelTask(taskItemTick);
 		getConfig().set("toilets", toilets);
 		saveConfig();
+		ConfigurationSerialization.unregisterClass(FoodAttr.class);
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -51,8 +54,6 @@ public class MainPlugin extends JavaPlugin implements Listener{
 		ItemShit.SHIT_ITEM_DATA=new NamespacedKey(this, "item_data");
 		getServer().getPluginManager().registerEvents(this, this);
 		
-		if(taskItemTick>0)
-			getServer().getScheduler().cancelTask(taskItemTick);
 		taskItemTick=getServer().getScheduler().scheduleSyncRepeatingTask(this, ()->{onTick();}, 0, (int)(20*getConfig().getDouble("frequency")));
 		
 		toiletRecipe=new ShapedRecipe(new NamespacedKey(this, "toilet"), ItemShit.getToilet())
@@ -128,6 +129,11 @@ public class MainPlugin extends JavaPlugin implements Listener{
 	@EventHandler(ignoreCancelled = true)
 	public void onBreak(BlockBreakEvent e){
 		toilets.remove(e.getBlock().getLocation());
+		if(e.isDropItems()){
+			var b=e.getBlock();
+			b.getWorld().dropItem(b.getLocation(), ItemShit.getToilet());
+			e.setDropItems(false);
+		}
 	}
 	
 	@EventHandler
@@ -168,6 +174,7 @@ public class MainPlugin extends JavaPlugin implements Listener{
 					e.remove();
 				}
 			}
+		
 		for(Player p:getServer().getOnlinePlayers()){
 			if(p.hasPermission("csokicraft.bladders_bowels.exempt"))
 				continue;
