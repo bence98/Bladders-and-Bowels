@@ -1,0 +1,12 @@
+locale:
+  item_name_shit: §6§lShit
+  item_name_pee: §e§lPee
+  warn_shit: §eYou feel an urge to poop. Hopefully you make it to the bathroom. (/shit)
+  item_desc_pee: §rSmells a bit foul. Then again, it §ois§r a puddle of piss...
+  item_desc_toilet: §rIt's a toilet. Useful when nature calls.
+  info_shit: §4You didn't find a restroom. Good job, you just pooped yourself.
+  warn_pee: §eMaybe you drank too much? Anyways, better find a toilet quick. (/pee)
+  item_name_toilet: §b§lToilet
+  warn_thirst: §eYour mouth feels like a sandstone temple. Go drink something.
+  info_pee: §4You peed yourself. Make sure to wear a diaper next time!
+  item_desc_shit: §rYep, this is what it looks like. A piece of human feces.

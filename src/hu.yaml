@@ -1,0 +1,12 @@
+locale:
+  item_name_shit: §6§lKaki
+  item_name_pee: §e§lPisi
+  warn_shit: §eHirtelen kakilnod kell. Találj gyorsan egy WC-t (/kaki0)
+  item_desc_pee: §rFúj, de büdös! Nem csoda, hiszen ez egy pisitócsa...
+  item_desc_toilet: §rEz egy WC. Hasznos, ha rádjön a szükség.
+  info_shit: §4Nem találtál WC-t. Nagyszerű, most bekakiltál
+  warn_pee: §eTalán túl sokat ittál? Mindegy is, a lényeg, hogy elérd a WC-t (/pisi)
+  item_name_toilet: §b§lWC
+  warn_thirst: §eA szád száraz, mint egy homokkő templom. Muszáj valamit innod!
+  info_pee: §4Bepisiltél. Legközelebb vegyél fel egy pelenkát!
+  item_desc_shit: §rEz pontosan az, aminek látszik. Egy darab emberi kaki.

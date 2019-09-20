@@ -1,5 +1,6 @@
 package csokicraft.bukkit.bladders_bowels;
 
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -9,6 +10,7 @@ import org.bukkit.NamespacedKey;
 import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
@@ -30,6 +32,8 @@ public class MainPlugin extends JavaPlugin implements Listener{
 	public static int MAX_SHIT, MAX_PEE, MAX_THIRST;
 	public static double WARN;
 	public static final String META_SHIT="bladders_bowels.shit", META_PEE="bladders_bowels.pee", META_THIRST="bladders_bowels.thirst";
+	public static YamlLocale locale;
+	
 	public Recipe toiletRecipe;
 	public List<Location> toilets;
 	public List<FoodAttr> foods;
@@ -40,6 +44,7 @@ public class MainPlugin extends JavaPlugin implements Listener{
 		super.onDisable();
 		if(taskItemTick>0)
 			getServer().getScheduler().cancelTask(taskItemTick);
+		reloadConfig();
 		getConfig().set("toilets", toilets);
 		saveConfig();
 		ConfigurationSerialization.unregisterClass(FoodAttr.class);
@@ -53,6 +58,13 @@ public class MainPlugin extends JavaPlugin implements Listener{
 		saveDefaultConfig();
 		ItemShit.SHIT_ITEM_DATA=new NamespacedKey(this, "item_data");
 		getServer().getPluginManager().registerEvents(this, this);
+		
+		try {
+			locale=YamlLocale.getLocale(getConfig().getString("lang"), this);
+		} catch (IOException | InvalidConfigurationException e){
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		}
 		
 		taskItemTick=getServer().getScheduler().scheduleSyncRepeatingTask(this, ()->{onTick();}, 0, (int)(20*getConfig().getDouble("frequency")));
 		
@@ -186,26 +198,26 @@ public class MainPlugin extends JavaPlugin implements Listener{
 			
 			if(cnt==30/getConfig().getDouble("frequency")){
 				if(thirst>=WARN*MAX_THIRST)
-					p.sendMessage("§eYour mouth feels like a sandstone temple. Go drink something.");
+					p.sendMessage(locale.translate("warn_thirst"));
 				if(shit>=WARN*MAX_SHIT)
-					p.sendMessage("§eYou feel an urge to poop. Hopefully you make it to the bathroom. (/shit)");
+					p.sendMessage(locale.translate("warn_shit"));
 				if(pee>=WARN*MAX_THIRST)
-					p.sendMessage("§eMaybe you drank too much? Anyways, better find a toilet quick. (/pee)");
+					p.sendMessage(locale.translate("warn_pee"));
 				cnt=0;
 			}
 			
-			getLogger().info("INFO for "+p.getName()+"\n"+shit+"\n"+pee+"\n"+thirst);
+			//getLogger().info("INFO for "+p.getName()+"\n"+shit+"\n"+pee+"\n"+thirst);
 			
 			if(thirst>=MAX_THIRST){
 				p.damage(1.0);
 			}
 			if(shit>=MAX_SHIT){
 				shit(p);
-				p.sendMessage("§4You didn't find a restroom. Good job, you just pooped yourself.");
+				p.sendMessage(locale.translate("info_shit"));
 			}
 			if(pee>=MAX_PEE){
 				pee(p);
-				p.sendMessage("§4You peed yourself. Make sure to wear a diaper next time!");
+				p.sendMessage(locale.translate("info_pee"));
 			}
 			cnt++;
 		}
